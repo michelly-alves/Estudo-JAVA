@@ -25,21 +25,17 @@ int main()
     Sapato shoes[N];
 
     //adquirindo dados dos sapatos junto com verifficações
-    int i,j, cont = 0;
+    int i,j, pares = 0, cont =0;
+
     for(i=0;i<N;i++)
     {
         printf("Numero do sapato e lado do sapato(E/D):");
-        scanf("%d %s", &shoes[i].M, &shoes[i].C);
+        scanf("%d %c", &shoes[i].M, &shoes[i].C);
 
         if (shoes[i].M <= 30 || shoes[i].M >=60)
         {
             printf("Numero do sapato e lado do calçado novamente:");
-            scanf("%d %s", &shoes[i].M, &shoes[i].C);
-        }
-        if(shoes[i].C != 'D' && shoes[i].C != 'E')
-        {
-            printf("Numero do sapato e lado do calçado novamente:");
-            scanf("%d %s", &shoes[i].M, &shoes[i].C);
+            scanf("%d %c", &shoes[i].M, &shoes[i].C);
         }
     }
 
@@ -48,14 +44,20 @@ int main()
     {
         for(j=0;j<N;j++)
         {
-            if(shoes[i].M == shoes[j].M && shoes[i].C != shoes[j].C)
+            if(shoes[i].M == shoes[j].M)
             {
-                    cont++;
+                cont++;
+                if (shoes[j].C != shoes[i].C)
+                pares++;
+                break;
             }
-        }
+
+        } printf("\ntam%d",shoes[i].M );
+        printf("\npares%d",pares );
+        printf("\ncont%d",cont );
     }
 
-    printf("Quantidade de pares que podem ser feitos:%d", cont/4);
+    printf("Quantidade de pares que podem ser feitos:%d", pares);
 
 
     return 0;
