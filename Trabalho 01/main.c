@@ -25,7 +25,7 @@ int main()
     Sapato shoes[N];
 
     //adquirindo dados dos sapatos junto com verifficações
-    int i,j, pares = 0, cont =0;
+    int i,j, pares = 0;
 
     for(i=0;i<N;i++)
     {
@@ -46,15 +46,11 @@ int main()
         {
             if(shoes[i].M == shoes[j].M)
             {
-                cont++;
                 if (shoes[j].C != shoes[i].C)
                 pares++;
                 break;
             }
-
-        } printf("\ntam%d",shoes[i].M );
-        printf("\npares%d",pares );
-        printf("\ncont%d",cont );
+        }
     }
 
     printf("Quantidade de pares que podem ser feitos:%d", pares);
