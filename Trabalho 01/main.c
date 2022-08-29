@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 struct sapato{
     int M;
     char C;
@@ -16,7 +15,7 @@ int main()
     printf("Quantidade de sapatos (2<= N <=10000):\n");
     scanf("%d", &N);
 
-    if (N %2 != 0 || N > 10000)
+    while (N %2 != 0 || N > 10000)
     {
     printf("Digite novamente a quantidade de sapatos:\n");
     scanf("%d", &N);
@@ -25,20 +24,19 @@ int main()
     Sapato shoes[N];
 
     //adquirindo dados dos sapatos junto com verifficações
-    int i,j, pares = 0;
+    int i,j, pares = 0, cont =0;
 
     for(i=0;i<N;i++)
     {
-        printf("Numero do sapato e lado do sapato(E/D):");
+        printf("Numero do e lado do sapato(E/D):");
         scanf("%d %c", &shoes[i].M, &shoes[i].C);
 
-        if (shoes[i].M <= 30 || shoes[i].M >=60)
+        while (shoes[i].M <= 30 || shoes[i].M >=60)
         {
-            printf("Numero do sapato e lado do calçado novamente:");
+            printf("Numero e lado do sapato novamente:");
             scanf("%d %c", &shoes[i].M, &shoes[i].C);
         }
     }
-
     ///juntando pares
     for(i=0;i<N;i++)
     {
@@ -52,9 +50,7 @@ int main()
             }
         }
     }
-
     printf("Quantidade de pares que podem ser feitos:%d", pares);
-
 
     return 0;
 }
