@@ -24,18 +24,19 @@ int main()
     Sapato shoes[N];
 
     //adquirindo dados dos sapatos junto com verifficações
-    int i,j, pares = 0, cont =0;
+    int i,j, pares = 0;
 
     for(i=0;i<N;i++)
     {
         printf("Numero do e lado do sapato(E/D):");
         scanf("%d %c", &shoes[i].M, &shoes[i].C);
 
-        while (shoes[i].M <= 30 || shoes[i].M >=60)
+        while ((shoes[i].M <= 30 || shoes[i].M >=60) || (shoes[i].C != 'E' && shoes[i].C != 'D'))
         {
             printf("Numero e lado do sapato novamente:");
             scanf("%d %c", &shoes[i].M, &shoes[i].C);
         }
+
     }
     ///juntando pares
     for(i=0;i<N;i++)
@@ -50,7 +51,7 @@ int main()
             }
         }
     }
-    printf("Quantidade de pares que podem ser feitos:%d", pares);
+    printf("Quantidade de pares que podem ser feitos: %d", pares);
 
     return 0;
 }
