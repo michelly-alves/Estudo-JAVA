@@ -15,7 +15,7 @@ int main()
     printf("Quantidade de sapatos (2<= N <=10000):\n");
     scanf("%d", &N);
 
-    while (N %2 != 0 || N > 10000)
+    while (N %2 != 0 || N > 10000 || N % 2 != 0)
     {
     printf("Digite novamente a quantidade de sapatos:\n");
     scanf("%d", &N);
