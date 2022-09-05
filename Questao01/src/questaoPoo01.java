@@ -21,9 +21,7 @@ public class questaoPoo01 {
 			System.out.println("Elemento "+ i);
 			A[i] = scan.nextInt();
 		}
-		
-		
-		
+			
 		for(i=0;i<N;i++)
 		{
 			if( A[i] %2 == 0)
@@ -51,9 +49,7 @@ public class questaoPoo01 {
 		System.out.println("Quantidade de numeros positivos:" + positivo);
 		System.out.println("Quantidade de numeros negativos:" + negativo);
 		System.out.println("Quantidade de numeros neutros:" + neutro);
-		
 		scan.close();
-		
 		
 	}
 
