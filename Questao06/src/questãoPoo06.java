@@ -34,13 +34,15 @@ public class questãoPoo06 {
 		HMAcordar = horaAcordar * 60 + minutoAcordar;
 		
 		int MinutosSono = 0;
-		
-		MinutosSono = HMAcordar - HMDormir;
+		if(horaDormir > horaAcordar)
+		{
+			MinutosSono =( 24 * 60) - (HMDormir - HMAcordar);
+		}else {
+			MinutosSono = HMAcordar - HMDormir;
+		}
 		
 		System.out.print("total de " + MinutosSono + " minutos de sono");;
 		
-		
-		
-		
+		scan.close();
 	}
 }
