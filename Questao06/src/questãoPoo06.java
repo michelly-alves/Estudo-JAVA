@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class questãoPoo06 {
 	public static void main(String[] args) {
+		/*Calculadora de minutos de sono apartir da inserção dos horarios determinados pelo usuario*/
 		Scanner scan = new Scanner (System.in);
 		
 		int horaDormir = 0, horaAcordar = 0, minutoDormir = 0,minutoAcordar = 0;
@@ -34,7 +35,7 @@ public class questãoPoo06 {
 		HMAcordar = horaAcordar * 60 + minutoAcordar;
 		
 		int MinutosSono = 0;
-		if(horaDormir > horaAcordar)
+		if(horaDormir > horaAcordar || (horaDormir == horaAcordar && minutoDormir > minutoAcordar))
 		{
 			MinutosSono =( 24 * 60) - (HMDormir - HMAcordar);
 		}else {
