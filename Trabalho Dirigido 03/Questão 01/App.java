@@ -48,8 +48,8 @@ public class App {
         	conta[0].contasNaoPagas(conta, N, conta[0].paga);	
     		conta[0].PagasAntes(conta, conta[0].paga, N);
         	/// MENOR E MAIOR CONSUMO
-            System.out.println();
-            System.out.println("Mês de menor consumo: "+conta[0].mesconsumo(conta, conta[0].consumoKh, N ));
+          	System.out.println();
+           	System.out.println("Mês de menor consumo: "+conta[0].mesconsumo(conta, conta[0].consumoKh, N ));
         	System.out.println("Mês de maior consumo: "+conta[0].mesMaiorConsumo(conta, conta[0].consumoKh, N ));
         	System.out.println("Media de consumo: "+conta[0].mediaConsumo(conta, conta[0].consumoKh, N ));
         	System.out.println();
