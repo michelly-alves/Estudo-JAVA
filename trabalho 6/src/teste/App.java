@@ -84,7 +84,7 @@ public class App {
 			System.out.print("Digite a posição");
 			int indice = scan.nextInt();
 			colecaoPessoa.remover(indice);
-			if (colecaoPessoa.remover(indice) == false) {
+			if (colecaoPessoa.remover(indice) == true) {
 				System.out.println("Objeto removido.");
 			}
 
@@ -94,18 +94,18 @@ public class App {
 			int pesquisar = scan.nextInt();
 			if (colecaoPessoa.pesquisar(vet[pesquisar]) == false) {
 				System.out.println("Objeto não existe.");
-			}else {
-				System.out.println(colecaoPessoa.retornarObjeto(indice));
+			} else {
+				System.out.println(colecaoPessoa.retornarObjeto(pesquisar));
 			}
 
 			System.out.println();
 			System.out.println("ATUALIZAR");
-			System.out.print("Digite a posição");
+			System.out.print("Digite a posição: ");
 			indice = scan.nextInt();
 			scan.nextLine();
-			System.out.print("Digite o nome");
+			System.out.print("Digite o nome: ");
 			String nome = scan.nextLine();
-			System.out.print("fisica(CPF) ou juridica (CNPJ)?");
+			System.out.print("fisica(CPF) ou juridica (CNPJ)? ");
 			String opcao = scan.next();
 			scan.nextLine();
 			while (!opcao.equals("CPF") && !opcao.equals("CNPJ")) {
@@ -122,11 +122,8 @@ public class App {
 				int Mes = scan.nextInt();
 				int Ano = scan.nextInt();
 				scan.nextLine();
-				colecaoPessoa = new ColecaoPessoa(vet, indice);
 				PessoaFisica pessoaFisica = new PessoaFisica(nome, cpf, new ColecaoPessoa(vet, indice));
 				pessoaFisica.setDataNascimento(Ano, Mes, Dia);
-
-				colecaoPessoa.inserir(pessoaFisica);
 				vet[indice] = pessoaFisica;
 				pessoaFisica.calcularIdade(Dia, Mes, Ano);
 				if (pessoaFisica.getCpf().equals(cpf) == false) {
@@ -153,10 +150,9 @@ public class App {
 			if (colecaoPessoa.pesquisar(vet[indice]) == true) {
 				System.out.println("Objeto adcionado com sucesso.");
 			}
-				System.out.println();
-				colecaoPessoa.imprimirDadosColecao();
-			
-		
+			System.out.println();
+			colecaoPessoa.imprimirDadosColecao();
+
 		}
 
 	}
